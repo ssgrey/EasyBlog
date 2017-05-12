@@ -36,7 +36,7 @@ public class NewPostServlet extends HttpServlet {
 
             //user without login
             resp.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            resp.sendRedirect(resp.encodeRedirectURL("/login"));
+            resp.sendRedirect(resp.encodeRedirectURL("/Blog/login"));
         } else if (!post.validate()) {
 
             req.setAttribute("error_message", post.getMessage());
@@ -56,7 +56,7 @@ public class NewPostServlet extends HttpServlet {
                 resp.sendRedirect(resp.encodeRedirectURL("/Blog"));
             }
 
-            resp.sendRedirect(resp.encodeRedirectURL("/post/" + permalink));
+            resp.sendRedirect(resp.encodeRedirectURL("/Blog/post/" + permalink));
         }
     }
 
